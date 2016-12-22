@@ -1,0 +1,16 @@
+{
+    "name": "liujian/hprose-http-benchmark-use-wrk",
+    "description": "使用wrk对hprose开发的接口进行压测的方法。",
+    "type": "library",
+    "require": {
+        "hprose/hprose": "^2.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Laoliu",
+            "email": "Laoliu@lanmv.com"
+        }
+    ]
+}
