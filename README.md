@@ -41,6 +41,7 @@ subl .env
 ## 修改需要测试的接口方法及参数
 
 ```
+subl index.php
 // $client 即 Hprose http client
 
 $client->调用方法("传入参数1", "传入参数2", "传入参数3");
