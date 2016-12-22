@@ -7,6 +7,11 @@
         "vlucas/phpdotenv": "^2.4"
     },
     "license": "mit",
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
     "authors": [
         {
             "name": "Laoliu",
