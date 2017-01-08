@@ -40,12 +40,29 @@ subl .env
 
 ## 修改需要测试的接口方法及参数
 
+修改接口方法，主要是编写Hprose-php的客户端。代码会将客户端中请求的所有内容记录下来生成 hprose.lua 帮助你后续进行压力测试。
+
 ```
 subl index.php
 // $client 即 Hprose http client
 
 $client->调用方法("传入参数1", "传入参数2", "传入参数3");
+```
 
+### 例如
+
+```php
+// 远程hello方法，参数 string "laoliu"
+$client->hello("laoliu");
+
+// 远程count方法，参数数组
+$client->count(["a", "b", "c", "d", "e", "f", "g"]);
+
+// 远程toArray方法，参数对象
+$obj = new stdClass();
+$obj->param1 = 'a';
+$obj->param2 = 'x';
+$client->toArray($obj);
 ```
 
 ## 生成测试用配置文件
