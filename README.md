@@ -52,8 +52,8 @@ $client->调用方法("传入参数1", "传入参数2", "传入参数3");
 ### 例如
 
 ```php
-// 远程hello方法，参数 string "laoliu"
-$client->hello("laoliu");
+// 远程 toArray 方法，参数 string "php"
+$client->toArray("php");
 
 // 远程count方法，参数数组
 $client->count(["a", "b", "c", "d", "e", "f", "g"]);
@@ -69,6 +69,14 @@ $client->toArray($obj);
 
 ```
 php ./index.php
+```
+
+### 会生成如下代码
+```
+#cat hprose.lua
+wrk.method = "POST"
+wrk.body   = 'Cs7"toArray"a1{s3"php"}z'
+wrk.headers["Content-Type"] = "text/plain;charset=UTF-8"
 ```
 
 # 使用 Wrk 进行压测
